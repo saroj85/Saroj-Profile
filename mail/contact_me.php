@@ -18,5 +18,5 @@ $header = "From: send4saroj@gmail.com\n"; // This is the email address the gener
 $header .= "Reply-To: $email";	
 
 if(!mail($to, $subject, $body, $header))
-  http_response_code(200);
+  http_response_code(404);
 ?>
