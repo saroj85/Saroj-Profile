@@ -162,7 +162,7 @@
           <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
           <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
 <!--           <form name="sentMessage" id="contactForm" novalidate="novalidate"> -->
-            <form  name="sentMessage" id="contactForm" action="https://formspree.io/send4saroj@gmail.com" method="POST" />
+          <form name="sentMessage" id="contactForm" action="https://formspree.io/send4saroj@gmail.com" method="POST">
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
                 <label>Name</label>
@@ -173,7 +173,7 @@
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
                 <label>Email Address</label>
-                <input class="form-control" id="email" name=""email type="email" placeholder="Email Address" required="required" data-validation-required-message="Please enter your email address.">
+                <input class="form-control" id="email" name="email" type="email" placeholder="Email Address" required="required" data-validation-required-message="Please enter your email address.">
                 <p class="help-block text-danger"></p>
               </div>
             </div>
@@ -187,7 +187,7 @@
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
                 <label>Message</label>
-                <textarea class="form-control" name="message" id="message" rows="5" placeholder="Message" required="required" data-validation-required-message="Please enter a message."></textarea>
+                <textarea class="form-control" name="message"  id="message" rows="5" placeholder="Message" required="required" data-validation-required-message="Please enter a message."></textarea>
                 <p class="help-block text-danger"></p>
               </div>
             </div>
@@ -201,41 +201,7 @@
       </div>
     </div>
   </section>
-  <?php
-if(isset($_POST["SubmitBtn"])){
-
-$to = "send4saroj@gmail.com";
-$subject = "Contact mail";
-$from=$_POST["email"];
-$msg=$_POST["msg"];
-$headers = "From: $from";
-
-mail($to,$subject,$msg,$headers);
-echo "Email successfully sent.";
-}
-?>
-
-<form id="emailForm" name="emailForm" method="post" action="" >
-<table width="100%" border="0" align="center" cellpadding="4" cellspacing="1">
-<tr>
-  <td colspan="2"><strong>Online Contact Form</strong></td>
-</tr>
-<tr>
-  <td>E-mail :</td>
-  <td><input name="email" type="text" id="email"></td>
-</tr>
-<tr>
-  <td>Message :</td>
-  <td>
-  <textarea name="msg" cols="45" rows="5" id="msg"></textarea>
-  </td>
-</tr>
-<tr>
-  <td>&nbsp;</td>
-  <td><input name="SubmitBtn" type="submit" id="SubmitBtn" value="Submit"></td>
-</tr>
-</table>
-</form>
+  
 
   <!-- Footer -->
   <footer class="footer text-center">
